@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chantier{% endblock %}
+
+{% block body %}
+<section class="p-3 p-md-5">
+    <h1><i class="fas fa-eye"></i> {{ chantier.nom }}<span class="text-danger">.</span></h1>
+    <div class="rounded overflow-hidden shadow-lg bg-white px-3 py-1">
+        <table class="table table-borderless">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ chantier.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ chantier.nom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ chantier.adresse }}</td>
+            </tr>
+            <tr>
+                <th>DateDebut</th>
+                <td>{{ chantier.dateDebut ? chantier.dateDebut|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Pointages <br>
+                <span class="badge badge-info"><i class="fas fa-clock"></i> {{ chantier.totalHeures }} heure(s)</span></th>
+                <td>{% for pointage in chantier.pointages %}
+                        <span class="badge badge-info"><i class="fas fa-calendar"></i> {{ pointage.date|date('d.m.Y') }}</span>
+                        <span class="badge badge-secondary"><i class="fas fa-clock"></i> {{ pointage.duree|number_format(2) }}</span>
+                        <span class="badge badge-dark"><a href="{{ path('utilisateur_show',{id:pointage.utilisateur.id}) }}" class="text-decoration-none text-white"><i class="fas fa-user"></i> {{ pointage.utilisateur.nomComplet }}</a></span>
+                        <br>
+                    {% else %}
+                        <em><i class="fas fa-times"></i> Aucun pointage connu</em>
+                    {% endfor %}</td>
+            </tr>
+        </tbody>
+    </table>
+        <footer class="row bg-light p-3 rounded">
+            <div class="col">
+                <a href="{{ path('chantier_index') }}" class="btn btn-dark"><i class="fas fa-backward"></i></a>
+            </div>
+            <div class="col text-center">
+                <a href="{{ path('chantier_edit', {'id': chantier.id}) }}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+            </div>
+            <div class="text-end col">{{ include('chantier/_delete_form.html.twig') }}</div>
+        </footer>
+    </div>
+</section>
+{% endblock %}

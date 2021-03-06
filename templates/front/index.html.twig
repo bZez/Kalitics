@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue sur votre interface{% endblock %}
+
+{% block body %}
+    <section class="container">
+        <article class="row align-items-center vh-100">
+            <section class="row align-items-center">
+                <header class="col-sm-12 col-md">
+                    <hgroup>
+                        <h1 class="mb-0">Sam BZEZ x Kalitics<span class="text-danger">.</span></h1>
+                        <h2 class="text-muted"><em>Gestionnaire de pointage chantier</em></h2>
+                    </hgroup>
+                    <blockquote>
+                        Comme demandé un truc vite fait.
+                        Vraiment vite fait 🐱‍💻🐱‍👤
+                    </blockquote>
+                </header>
+                <footer class="col-sm-12 col-md text-end">
+                    <button class="btn btn-dark btn-lg" data-href="{{ path('utilisateur_index') }}"><i
+                                class="fas fa-users"></i> Utilisateurs
+                    </button>
+                    <button class="btn btn-dark btn-lg" data-href="{{ path('chantier_index') }}"><i
+                                class="fas fa-hard-hat"></i> Chantiers
+                    </button>
+                    <button class="btn btn-dark btn-lg" data-href="{{ path('pointage_index') }}"><i
+                                class="fas fa-calendar-alt"></i> Pointages
+                    </button>
+                </footer>
+            </section>
+        </article>
+    </section>
+{% endblock %}

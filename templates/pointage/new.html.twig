@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New pointage{% endblock %}
+
+{% block body %}
+    <section class="p-3 p-md-5">
+        <h1><i class="fas fa-hard-hat"></i> Nouveau pointage<span
+                    class="text-danger">.</span></h1>
+        <div class="rounded overflow-hidden shadow-lg bg-white px-3 pb-1">
+            <div class="py-3">{{ include('pointage/_form.html.twig') }}</div>
+            <footer class="row bg-light p-3 rounded">
+                <div class="col">
+                    <a href="{{ path('pointage_index') }}" class="btn btn-dark"><i class="fas fa-backward"></i></a>
+                </div>
+                <div class="col text-end">
+                    <button class="btn btn-success disabled" form="form_pointage" type="submit" id="form_pointage_submit_btn"><i class="fas fa-check"></i>
+                        Pointer
+                    </button>
+                </div>
+            </footer>
+        </div>
+    </section>
+{% endblock %}

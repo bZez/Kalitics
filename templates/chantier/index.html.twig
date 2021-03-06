@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chantier index{% endblock %}
+
+{% block body %}
+    <section class="p-3 p-md-5">
+        <div class="row align-items-center">
+            <h1 class="col"><i class="fas fa-hard-hat"></i> Chantiers<span class="text-danger">.</span></h1>
+            <div class="col text-end">
+                <button class="btn btn-dark" data-href="{{ path('chantier_new') }}"><i class="fas fa-hard-hat"></i> Nouveau chantier</button>
+                {% include 'nav.html.twig' %}
+            </div>
+        </div>
+        <div class="rounded overflow-hidden shadow-lg bg-white">
+            <table class="w-100 table table-borderless text-center table-hover mb-0">
+                <thead class="bg-light">
+                <tr>
+                    <th>#</th>
+                    <th>Nom</th>
+                    <th>Adresse</th>
+                    <th>Début de chantier</th>
+                    <th>Total heures</th>
+                    <th class="text-end">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for chantier in chantiers %}
+                    <tr >
+                        <td class="align-middle">
+                            <figure class="m-0">
+                                <img src="https://via.placeholder.com/50" alt="Id chantier" class="rounded-circle">
+                            </figure>
+                        </td>
+                        <td class="align-middle">{{ chantier.nom }}</td>
+                        <td class="align-middle">{{ chantier.adresse }}</td>
+                        <td class="align-middle">{{ chantier.dateDebut ? chantier.dateDebut|date('d.m.Y') : '' }}</td>
+                        <td class="align-middle"><span class="badge badge-info"><i class="fas fa-clock"></i> {{ chantier.totalHeures }} heure(s)</span></td>
+                        <td class="text-end align-middle">
+                            <a href="{{ path('chantier_show', {'id': chantier.id}) }}" class="btn btn-secondary"><i class="fas fa-eye"></i></a>
+                            <a href="{{ path('chantier_edit', {'id': chantier.id}) }}" class="btn btn-dark"><i class="fas fa-edit"></i></a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">Aucun chantier</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+{% endblock %}
