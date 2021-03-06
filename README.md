@@ -2,6 +2,9 @@
 Gestionnaire de pointage SF4
 ![alt text](kalitics.gif "Preview")
 
+## Démo
+https://kalitics.bzez.dev/
+
 ## Pré-requis
 
 - Apache/Nginx Server
