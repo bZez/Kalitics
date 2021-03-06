@@ -26,11 +26,11 @@
             </tr>
             <tr>
                 <th>Pointages <br>
-                <span class="badge badge-info"><i class="fas fa-clock"></i> {{ chantier.totalHeures }} heure(s)</span></th>
+                <span class="badge bg-info"><i class="fas fa-clock"></i> {{ chantier.totalHeures }} heure(s)</span></th>
                 <td>{% for pointage in chantier.pointages %}
-                        <span class="badge badge-info"><i class="fas fa-calendar"></i> {{ pointage.date|date('d.m.Y') }}</span>
-                        <span class="badge badge-secondary"><i class="fas fa-clock"></i> {{ pointage.duree|number_format(2) }}</span>
-                        <span class="badge badge-dark"><a href="{{ path('utilisateur_show',{id:pointage.utilisateur.id}) }}" class="text-decoration-none text-white"><i class="fas fa-user"></i> {{ pointage.utilisateur.nomComplet }}</a></span>
+                        <span class="badge bg-info"><i class="fas fa-calendar"></i> {{ pointage.date|date('d.m.Y') }}</span>
+                        <span class="badge bg-secondary"><i class="fas fa-clock"></i> {{ pointage.duree|number_format(2) }}</span>
+                        <span class="badge bg-dark text-white"><a href="{{ path('utilisateur_show',{id:pointage.utilisateur.id}) }}" class="text-decoration-none text-white"><i class="fas fa-user"></i> {{ pointage.utilisateur.nomComplet }}</a></span>
                         <br>
                     {% else %}
                         <em><i class="fas fa-times"></i> Aucun pointage connu</em>

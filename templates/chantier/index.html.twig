@@ -34,7 +34,7 @@
                         <td class="align-middle">{{ chantier.nom }}</td>
                         <td class="align-middle">{{ chantier.adresse }}</td>
                         <td class="align-middle">{{ chantier.dateDebut ? chantier.dateDebut|date('d.m.Y') : '' }}</td>
-                        <td class="align-middle"><span class="badge badge-info"><i class="fas fa-clock"></i> {{ chantier.totalHeures }} heure(s)</span></td>
+                        <td class="align-middle"><span class="badge bg-info"><i class="fas fa-clock"></i> {{ chantier.totalHeures }} heure(s)</span></td>
                         <td class="text-end align-middle">
                             <a href="{{ path('chantier_show', {'id': chantier.id}) }}" class="btn btn-secondary"><i class="fas fa-eye"></i></a>
                             <a href="{{ path('chantier_edit', {'id': chantier.id}) }}" class="btn btn-dark"><i class="fas fa-edit"></i></a>
