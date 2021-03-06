@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Kalitics [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome#readme)
 Gestionnaire de pointage SF4
 ![alt text](preview.png "Preview")
@@ -49,4 +48,3 @@ Si vous souhaitez contribuer, laissez tomber.
 "As you like."
 =======
 # Kalitics
->>>>>>> 4d6ca0e9dbff3eb74b20ec13074da182a9a9bf57
