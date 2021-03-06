@@ -36,9 +36,9 @@
                         <td class="align-middle">{{ utilisateur.matricule }}</td>
                         <td class="align-middle">
                             {% if utilisateur.dernierPointage %}
-                                <span class="badge badge-info"><i class="fas fa-calendar"></i> {{ utilisateur.dernierPointage.date|date('d.m.Y') }}</span>
-                                <span class="badge badge-secondary"><i class="fas fa-clock"></i> {{ utilisateur.dernierPointage.duree|number_format(2) }}</span>
-                                <span class="badge badge-dark"><a href="{{ path('chantier_show',{id:utilisateur.dernierPointage.chantier.id}) }}" class="text-decoration-none text-white"><i class="fas fa-hard-hat"></i> {{ utilisateur.nomComplet }}</a></span>
+                                <span class="badge bg-info"><i class="fas fa-calendar"></i> {{ utilisateur.dernierPointage.date|date('d.m.Y') }}</span>
+                                <span class="badge bg-secondary"><i class="fas fa-clock"></i> {{ utilisateur.dernierPointage.duree|number_format(2) }}</span>
+                                <span class="badge bg-dark text-white"><a href="{{ path('chantier_show',{id:utilisateur.dernierPointage.chantier.id}) }}" class="text-decoration-none text-white"><i class="fas fa-hard-hat"></i> {{ utilisateur.nomComplet }}</a></span>
 
                             {% else %}
                                 <em><i class="fas fa-times"></i> Aucun pointage connu</em>
