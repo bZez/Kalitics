@@ -37,6 +37,7 @@ Rendez-vous sur http://VOTRESERVEUR/kalitics.
 
 ## Technos
 
+
 - [jQuery 3](https://code.jquery.com) - Framework JS (front-end)
 - [Symfony 4](https://symfony.com) - Framework PHP (back-end)
 - [Bootstrap 5](https://getbootstrap.com) - Framework JS/CSS (front-end)
